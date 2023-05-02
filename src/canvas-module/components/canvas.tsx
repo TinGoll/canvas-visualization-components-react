@@ -19,7 +19,7 @@ const Canvas: FC<CanvasProps> = ({ draw, ...props }) => {
       return;
     }
     draw(context);
-  }, []);
+  }, [draw]);
   return <StyledCanvas {...props} ref={canvasRef} />;
 };
 

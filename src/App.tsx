@@ -7,16 +7,16 @@ function App() {
   const { setMode } = useColorScheme();
   useEffect(() => {
     setMode("dark");
-  }, []);
+  }, [setMode]);
 
-  const draw = (context: CanvasRenderingContext2D) => {
+  const draw = React.useCallback((context: CanvasRenderingContext2D) => {
     // Тут код логики
-  };
+  }, []);
 
   return (
     <Main>
       <Sheet variant='soft' color='neutral' sx={(theme) => ({ p: 2, borderRadius: theme.radius.sm })}>
-        <Canvas sx={{}} draw={draw} height={1000} width={1000} />
+        <Canvas sx={{}} draw={draw} height={800} width={800} />
       </Sheet>
     </Main>
   );
