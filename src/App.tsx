@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { useColorScheme, Sheet } from "@mui/joy";
 import { Main } from "./components";
 import Canvas from "./canvas-module/components/canvas";
+import { FRAME_CANVAS_WIDTH, FRAME_CANVAS_HEIGHT, CANVAS_HEIGHT, CANVAS_WIDTH } from "./canvas-module/configuration";
 
 function App() {
   const { setMode } = useColorScheme();
@@ -22,16 +23,16 @@ function App() {
       >
         <Canvas
           sx={(theme) => ({
-            width: "100%",
-            height: "100%",
+            width: FRAME_CANVAS_WIDTH,
+            height: FRAME_CANVAS_HEIGHT,
             border: "1px solid",
             borderColor: "divider",
             borderRadius: theme.radius.sm,
             overflow: "hidden",
           })}
           draw={draw}
-          height={800}
-          width={800}
+          height={CANVAS_HEIGHT}
+          width={CANVAS_WIDTH}
         />
       </Sheet>
     </Main>
